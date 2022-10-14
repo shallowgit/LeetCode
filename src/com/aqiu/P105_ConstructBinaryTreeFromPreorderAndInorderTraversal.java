@@ -1,11 +1,11 @@
 package com.aqiu;
 
-import java.util.Arrays;
+import java.util.HashMap;
 
 public class P105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
     public static void main(String[] args) {
         Solution solution = new P105_ConstructBinaryTreeFromPreorderAndInorderTraversal().new Solution();
-
+        solution.buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
     }
 
     //leetcode submit region begin(Prohibit modification and deletion
@@ -44,36 +44,55 @@ public class P105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
         }
     }
 
+    //题解链接：https://leetcode.cn/problems/zhong-jian-er-cha-shu-lcof/solution/mian-shi-ti-07-zhong-jian-er-cha-shu-di-gui-fa-qin/
     class Solution {
+        int[] preorder; //保留先序遍历
+        HashMap<Integer, Integer> hashMap = new HashMap<>();    //标记中序遍历
+
         public TreeNode buildTree(int[] preorder, int[] inorder) {
-            TreeNode root = new TreeNode(preorder[0]);
-            if (preorder.length == 1)
-                return root;
-            int rootValue = preorder[0];
-            int index = -1;
+            this.preorder = preorder;
+            //将中序遍历的值及索引放在map中，方便递归时获取左子树与右子树的数量及其根的索引
             for (int i = 0; i < inorder.length; i++) {
-                if (inorder[i] == rootValue)
-                    index = i;
+                hashMap.put(inorder[i], i);
             }
-            if (index == 0)
-                root.left = null;
-            else
-                root.left = builLeftTree(preorder, inorder, 0, index - 1);
-
-            if (index == preorder.length - 1)
-                root.right = null;
-            else
-                root.right = buildRightTree(preorder, inorder, index + 1, preorder.length);
-
-            return root;
+            return buildMyTree(0, 0, inorder.length - 1);
         }
 
-        public TreeNode builLeftTree(int[] preorder, int[] inorder, int leftBorder, int rightBorder) {
-            new TreeNode(preorder[])
+        public TreeNode buildMyTree(int root, int left, int right) {
+            if (left > right)   // 递归终止
+                return null;
+            int index = hashMap.get(preorder[root]);    // 划分根节点、左子树、右子树
+            TreeNode treeNode = new TreeNode(preorder[root]);   // 建立根节点
+            treeNode.left = buildMyTree(root + 1, left, index - 1); // 开启左子树递归
+            treeNode.right = buildMyTree(index - left + root + 1, index + 1, right);    // 开启右子树递归
+            return treeNode;    // 回溯返回根节点
+        }
+    }
+
+    class Solution2 {
+        int root;   //当前根节点在先序遍历数组里的位置
+        int[] preorder; //保留先序遍历
+        HashMap<Integer, Integer> hashMap = new HashMap<>();    //标记中序遍历
+
+        public TreeNode buildTree(int[] preorder, int[] inorder) {
+            //将中序遍历的值及索引放在map中，方便递归时获取左子树与右子树的数量及其根的索引
+            for (int i = 0; i < inorder.length; i++) {
+                hashMap.put(inorder[i], i);
+            }
+            this.preorder = preorder;
+            root = 0;
+            return buildMyTree(0, inorder.length - 1);
         }
 
-        public TreeNode buildRightTree(int[] preorder, int[] inorder, int leftBorder, int rightBorder) {
-
+        public TreeNode buildMyTree(int left, int right) {
+            if (left > right)   // 递归终止
+                return null;
+            int index = hashMap.get(preorder[root]);    // 划分根节点、左子树、右子树
+            TreeNode treeNode = new TreeNode(preorder[root]);   // 建立根节点
+            root++; //由于root是全局变量，并且先遍历左子树，所以轮到右子树时，root的值是正确的；并且一定要先遍历左子树；并且一定要先遍历右子树，这样root的下标才能对上
+            treeNode.left = buildMyTree(left, index - 1); // 开启左子树递归
+            treeNode.right = buildMyTree(index + 1, right);    // 开启右子树递归
+            return treeNode;    // 回溯返回根节点
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
