@@ -11,12 +11,14 @@ package com.aqiu;
 
 import java.util.HashMap;
 
+/**
+ * @author Aqiu
+ */
 public class P13_RomanToInteger {
     public static void main(String[] args) {
         Solution solution = new P13_RomanToInteger().new Solution();
     }
 
-    //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         private HashMap<Character, Integer> hashMap = new HashMap<>();
 
@@ -97,8 +99,9 @@ public class P13_RomanToInteger {
                     return 400;
                 case 'g':
                     return 900;
+                default:
+                    return 0;
             }
-            return 0;
         }
     }
 
@@ -131,11 +134,14 @@ public class P13_RomanToInteger {
                     case 'M':
                         num[i] = 1000;
                         break;
+                    default:
+                        break;
                 }
             }
             for (int i = 0; i < length; i++) {
-                if (i < length - 1 && num[i - 1] < num[i])
+                if (i < length - 1 && num[i - 1] < num[i]) {
                     num[i] = -num[i];
+                }
                 result += num[i];
             }
             return result;

@@ -1,12 +1,14 @@
 package com.aqiu;
 
+/**
+ * @author Aqiu
+ */
 public class P73_SetMatrixZeroes {
     public static void main(String[] args) {
         Solution solution = new P73_SetMatrixZeroes().new Solution();
         solution.setZeroes(new int[][]{{1, 2, 3}});
     }
 
-    //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         //使用两个标记变量
         //思路和算法
@@ -18,12 +20,14 @@ public class P73_SetMatrixZeroes {
             boolean row = false;
             boolean column = false;
             for (int i = 0; i < rowLength; i++) {
-                if (matrix[i][0] == 0)
+                if (matrix[i][0] == 0) {
                     column = true;
+                }
             }
             for (int i = 0; i < columnLength; i++) {
-                if (matrix[0][i] == 0)
+                if (matrix[0][i] == 0) {
                     row = true;
+                }
             }
             for (int i = 1; i < rowLength; i++) {
                 for (int j = 1; j < columnLength; j++) {
@@ -35,8 +39,9 @@ public class P73_SetMatrixZeroes {
             }
             for (int i = 1; i < rowLength; i++) {
                 for (int j = 1; j < columnLength; j++) {
-                    if (matrix[i][0] == 0 || matrix[0][j] == 0)
+                    if (matrix[i][0] == 0 || matrix[0][j] == 0) {
                         matrix[i][j] = 0;
+                    }
                 }
             }
             if (column) {
@@ -61,8 +66,9 @@ public class P73_SetMatrixZeroes {
             int columnLength = matrix[0].length;
             boolean flag = false;
             for (int i = 0; i < rowLength; i++) {
-                if (matrix[i][0] == 0)
+                if (matrix[i][0] == 0) {
                     flag = true;
+                }
                 //设置标兵是从前往后设
                 for (int j = 1; j < columnLength; j++) {
                     if (matrix[i][j] == 0) {

@@ -2,6 +2,9 @@ package com.aqiu;
 
 import java.util.HashMap;
 
+/**
+ * @author Aqiu
+ */
 public class P106_ConstructBinaryTreeFromInorderAndPostorderTraversal {
     public static void main(String[] args) {
         Solution solution = new P106_ConstructBinaryTreeFromInorderAndPostorderTraversal().new Solution();
@@ -61,7 +64,9 @@ public class P106_ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
         public TreeNode buildMyTree(int left, int right) {
             if (left > right)   // 递归终止
+            {
                 return null;
+            }
             int index = hashMap.get(postorder[root]);   // 划分根节点、左子树、右子树
             TreeNode treeNode = new TreeNode(postorder[root]);  // 建立根节点
             root--; //由于root是全局变量，并且先遍历右子树，所以轮到左子树时，root的值是正确的；并且一定要先遍历右子树，这样root的下标才能对上
@@ -86,8 +91,9 @@ public class P106_ConstructBinaryTreeFromInorderAndPostorderTraversal {
         }
 
         public TreeNode buildMyTree(int left, int right) {
-            if (left > right)
+            if (left > right) {
                 return null;
+            }
             int index = hashMap.get(postorder[root]);
             TreeNode treeNode = new TreeNode(postorder[root]);
             root--;
