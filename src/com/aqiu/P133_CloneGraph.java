@@ -42,8 +42,6 @@ public class P133_CloneGraph {
 
         /**
          * 深度优先遍历
-         * @param node
-         * @return
          */
         public Node cloneGraph1(Node node) {
             if (node == null) {
@@ -66,8 +64,6 @@ public class P133_CloneGraph {
 
         /**
          * 广度优先遍历
-         * @param node
-         * @return
          */
         public Node cloneGraph2(Node node) {
             if (node == null) {

@@ -35,8 +35,6 @@ public class P138_CopyListWithRandomPointer {
         /**
          * 解法一：原地处理，将克隆结点放在原结点后面，在原链表上处理克隆结点的random指针，最后分离两个链表
          * 空间复杂度O(1)
-         * @param head
-         * @return
          */
         public Node copyRandomList1(Node head) {
             if (head == null) {
@@ -73,8 +71,6 @@ public class P138_CopyListWithRandomPointer {
         /**
          * 解法二： 使用hash存储原结点和克隆结点的映射关系，通过映射关系处理克隆结点的random指针
          * 时间复杂度O(n)；空间复杂度O(n)
-         * @param head
-         * @return
          */
         public Node copyRandomList2(Node head) {
             if (head == null) {

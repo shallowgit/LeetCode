@@ -15,8 +15,6 @@ public class P128_LongestConsecutiveSequence {
     class Solution {
         /**
          * 评论里 江不知 的解法
-         * @param nums
-         * @return
          */
         public int longestConsecutive1(int[] nums) {
             if (nums.length < 2) {
@@ -46,8 +44,6 @@ public class P128_LongestConsecutiveSequence {
 
         /**
          * 官方解
-         * @param nums
-         * @return
          */
         public int longestConsecutive2(int[] nums) {
             if (nums.length < 2) {
@@ -79,8 +75,6 @@ public class P128_LongestConsecutiveSequence {
 
         /**
          * 评论里 Xdims 与评论区回复相结合
-         * @param nums
-         * @return
          */
         public int longestConsecutive3(int[] nums) {
             if (nums.length < 2) {
