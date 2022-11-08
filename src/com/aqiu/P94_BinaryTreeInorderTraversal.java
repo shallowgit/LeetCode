@@ -54,6 +54,10 @@ public class P94_BinaryTreeInorderTraversal {
             inorder(root.right);
         }
     }
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:39.5 MB,击败了74.86% 的Java用户
+     */
 
     /**
      * 迭代
@@ -75,6 +79,10 @@ public class P94_BinaryTreeInorderTraversal {
             return res;
         }
     }
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:39.4 MB,击败了86.44% 的Java用户
+     */
 
     /**
      * 题解链接：https://leetcode.cn/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/
@@ -115,6 +123,11 @@ public class P94_BinaryTreeInorderTraversal {
         }
     }
 
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:39.9 MB,击败了19.69% 的Java用户
+     */
+
     class Solution4 {
         public List<Integer> inorderTraversal(TreeNode root) {
             LinkedList<Integer> list = new LinkedList<>();
@@ -142,4 +155,42 @@ public class P94_BinaryTreeInorderTraversal {
             return list;
         }
     }
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:39.7 MB,击败了47.38% 的Java用户
+     */
+
+    /**
+     * 方法三：Morris 中序遍历
+     * 解法来自官方题解的评论区
+     */
+    class Solution5 {
+        public List<Integer> inorderTraversal (TreeNode root) {
+            LinkedList<Integer> list = new LinkedList<>();
+            while (root != null) {
+                if (root.left == null) {
+                    list.add(root.val);
+                    root = root.right;
+                } else {
+                    TreeNode pre = root.left;
+                    while (pre.right != null && pre.right != root) {
+                        pre = pre.right;
+                    }
+                    if (pre.right == null) {
+                        pre.right = root;
+                        root = root.left;
+                    } else {
+                        pre.right = null;
+                        list.add(root.val);
+                        root = root.right;
+                    }
+                }
+            }
+            return list;
+        }
+    }
+    /**
+     * 执行耗时:0 ms,击败了100.00% 的Java用户
+     * 内存消耗:39.3 MB,击败了95.96% 的Java用户
+     */
 }
