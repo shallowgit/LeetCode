@@ -170,7 +170,7 @@ public class P114_FlattenBinaryTreeToLinkedList {
      */
     class Solution5 {
         public void flatten(TreeNode root) {
-            TreeNode cur = root;
+            TreeNode cur = root;    //其实 cur 变量可以不声明
             while (cur != null) {
                 if (cur.left != null) {
                     TreeNode temp = cur.left;
@@ -185,6 +185,7 @@ public class P114_FlattenBinaryTreeToLinkedList {
             }
         }
     }
+
     /**
      * 执行耗时:0 ms,击败了100.00% 的Java用户
      * 内存消耗:41.1 MB,击败了38.90% 的Java用户

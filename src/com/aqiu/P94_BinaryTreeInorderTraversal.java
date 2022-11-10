@@ -165,7 +165,7 @@ public class P94_BinaryTreeInorderTraversal {
      * 解法来自官方题解的评论区
      */
     class Solution5 {
-        public List<Integer> inorderTraversal (TreeNode root) {
+        public List<Integer> inorderTraversal(TreeNode root) {
             LinkedList<Integer> list = new LinkedList<>();
             while (root != null) {
                 if (root.left == null) {
@@ -189,6 +189,7 @@ public class P94_BinaryTreeInorderTraversal {
             return list;
         }
     }
+
     /**
      * 执行耗时:0 ms,击败了100.00% 的Java用户
      * 内存消耗:39.3 MB,击败了95.96% 的Java用户
