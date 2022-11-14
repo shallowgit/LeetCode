@@ -155,4 +155,49 @@ public class P143_ReorderList {
          * 内存消耗:44 MB,击败了60.26% 的Java用户
          */
     }
+
+    class Solution3 {
+        public void reorderList3(ListNode head) {
+            ListNode mid = middleNode(head);
+            ListNode l1 = head;
+            ListNode l2 = reverseList(mid.next);
+            mid.next = null;
+            mergeList(l1, l2);
+        }
+
+        private ListNode middleNode(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+            while (fast.next != null && fast.next.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+            return slow;
+        }
+
+        private ListNode reverseList(ListNode head) {
+            ListNode prev = null;
+            ListNode cur = head;
+            while (cur != null) {
+                ListNode temp = cur.next;
+                cur.next = prev;
+                prev = cur;
+                cur = temp;
+            }
+            return prev;
+        }
+
+        private void mergeList(ListNode l1, ListNode l2) {
+            ListNode l1_temp;
+            ListNode l2_temp;
+            while (l1 != null && l2 != null) {
+                l1_temp = l1.next;
+                l2_temp = l2.next;
+                l1.next = l2;
+                l2.next = l1_temp;
+                l1 = l1_temp;
+                l2 = l2_temp;
+            }
+        }
+    }
 }
