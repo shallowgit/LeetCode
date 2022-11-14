@@ -1,11 +1,11 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 /**
  * @author Aqiu
  */
-public class P73_SetMatrixZeroes {
+public class _6_P73_SetMatrixZeroes {
     public static void main(String[] args) {
-        Solution solution = new P73_SetMatrixZeroes().new Solution();
+        Solution solution = new _6_P73_SetMatrixZeroes().new Solution();
         solution.setZeroes(new int[][]{{1, 2, 3}});
     }
 

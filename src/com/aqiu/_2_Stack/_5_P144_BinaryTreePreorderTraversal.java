@@ -1,20 +1,17 @@
-package com.aqiu;
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
+package com.aqiu._2_Stack;
 
 import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Binary Tree Preorder Traversal
  *
  * @author Aqiu
  */
-public class P144_BinaryTreePreorderTraversal {
+public class _5_P144_BinaryTreePreorderTraversal {
     public static void main(String[] args) {
-        Solution solution = new P144_BinaryTreePreorderTraversal().new Solution();
+        Solution solution = new _5_P144_BinaryTreePreorderTraversal().new Solution();
     }
 
     //Definition for a binary tree node.

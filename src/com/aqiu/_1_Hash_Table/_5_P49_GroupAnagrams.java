@@ -1,4 +1,4 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * @author Aqiu
  */
-public class P49_GroupAnagrams {
+public class _5_P49_GroupAnagrams {
     public static void main(String[] args) {
-        Solution solution = new P49_GroupAnagrams().new Solution();
+        Solution solution = new _5_P49_GroupAnagrams().new Solution();
         solution.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
     }
 

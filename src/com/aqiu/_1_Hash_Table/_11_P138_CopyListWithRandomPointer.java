@@ -1,4 +1,4 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 import java.util.HashMap;
 
@@ -7,9 +7,9 @@ import java.util.HashMap;
  *
  * @author Aqiu
  */
-public class P138_CopyListWithRandomPointer {
+public class _11_P138_CopyListWithRandomPointer {
     public static void main(String[] args) {
-        Solution solution = new P138_CopyListWithRandomPointer().new Solution();
+        Solution solution = new _11_P138_CopyListWithRandomPointer().new Solution();
     }
 
     // Definition for a Node.

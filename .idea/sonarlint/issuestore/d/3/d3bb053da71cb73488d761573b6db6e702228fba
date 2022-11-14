@@ -1,0 +1,8 @@
+
+g	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(öÕÏ›ýÿÿÿÿ
+c
+java:S3824"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(Ò®Ø³üÿÿÿÿ
+R
+java:S1854"<Remove this useless assignment to local variable "solution".(äÈ†Þ
+C
+java:S1481"-Remove this unused "solution" local variable.(äÈ†Þ

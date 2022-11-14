@@ -1,4 +1,4 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 import java.util.HashSet;
 import java.util.List;
@@ -8,9 +8,9 @@ import java.util.List;
  *
  * @author Aqiu
  */
-public class P139_WordBreak {
+public class _12_P139_WordBreak {
     public static void main(String[] args) {
-        Solution solution = new P139_WordBreak().new Solution();
+        Solution solution = new _12_P139_WordBreak().new Solution();
 
     }
 

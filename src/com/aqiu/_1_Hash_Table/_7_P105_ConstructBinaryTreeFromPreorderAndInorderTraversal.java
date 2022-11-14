@@ -1,13 +1,13 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 import java.util.HashMap;
 
 /**
  * @author Aqiu
  */
-public class P105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
+public class _7_P105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
     public static void main(String[] args) {
-        Solution solution = new P105_ConstructBinaryTreeFromPreorderAndInorderTraversal().new Solution();
+        Solution solution = new _7_P105_ConstructBinaryTreeFromPreorderAndInorderTraversal().new Solution();
         solution.buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
     }
 

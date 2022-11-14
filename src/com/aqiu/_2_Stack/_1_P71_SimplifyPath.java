@@ -1,4 +1,4 @@
-package com.aqiu;
+package com.aqiu._2_Stack;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -8,9 +8,9 @@ import java.util.LinkedList;
  *
  * @author Aqiu
  */
-public class P71_SimplifyPath {
+public class _1_P71_SimplifyPath {
     public static void main(String[] args) {
-        Solution solution = new P71_SimplifyPath().new Solution();
+        Solution solution = new _1_P71_SimplifyPath().new Solution();
         solution.simplifyPath("/home/");
     }
 

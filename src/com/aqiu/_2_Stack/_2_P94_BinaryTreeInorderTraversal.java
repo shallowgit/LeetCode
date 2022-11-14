@@ -1,4 +1,4 @@
-package com.aqiu;
+package com.aqiu._2_Stack;
 
 import java.util.*;
 
@@ -7,9 +7,9 @@ import java.util.*;
  *
  * @author zhaohanqing
  */
-public class P94_BinaryTreeInorderTraversal {
+public class _2_P94_BinaryTreeInorderTraversal {
     public static void main(String[] args) {
-        Solution solution = new P94_BinaryTreeInorderTraversal().new Solution();
+        Solution solution = new _2_P94_BinaryTreeInorderTraversal().new Solution();
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 /**
  * @author Aqiu
  */
-public class P17_LetterCombinationsOfAPhoneNumber {
+public class _3_P17_LetterCombinationsOfAPhoneNumber {
     public static void main(String[] args) {
-        Solution solution = new P17_LetterCombinationsOfAPhoneNumber().new Solution();
+        Solution solution = new _3_P17_LetterCombinationsOfAPhoneNumber().new Solution();
         solution.letterCombinations("23");
     }
 

@@ -1,13 +1,13 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 import java.util.HashMap;
 
 /**
  * @author Aqiu
  */
-public class P106_ConstructBinaryTreeFromInorderAndPostorderTraversal {
+public class _8_P106_ConstructBinaryTreeFromInorderAndPostorderTraversal {
     public static void main(String[] args) {
-        Solution solution = new P106_ConstructBinaryTreeFromInorderAndPostorderTraversal().new Solution();
+        Solution solution = new _8_P106_ConstructBinaryTreeFromInorderAndPostorderTraversal().new Solution();
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)

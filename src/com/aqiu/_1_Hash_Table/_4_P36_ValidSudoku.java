@@ -1,11 +1,11 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 /**
  * @author Aqiu
  */
-public class P36_ValidSudoku {
+public class _4_P36_ValidSudoku {
     public static void main(String[] args) {
-        Solution solution = new P36_ValidSudoku().new Solution();
+        Solution solution = new _4_P36_ValidSudoku().new Solution();
 
     }
 

@@ -1,4 +1,4 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 import java.util.*;
 
@@ -7,9 +7,9 @@ import java.util.*;
  *
  * @author Aqiu
  */
-public class P133_CloneGraph {
+public class _10_P133_CloneGraph {
     public static void main(String[] args) {
-        Solution solution = new P133_CloneGraph().new Solution();
+        Solution solution = new _10_P133_CloneGraph().new Solution();
 
     }
 

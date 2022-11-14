@@ -1,4 +1,4 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -6,9 +6,9 @@ import java.util.HashSet;
 /**
  * @author Aqiu
  */
-public class P128_LongestConsecutiveSequence {
+public class _9_P128_LongestConsecutiveSequence {
     public static void main(String[] args) {
-        Solution solution = new P128_LongestConsecutiveSequence().new Solution();
+        Solution solution = new _9_P128_LongestConsecutiveSequence().new Solution();
 
     }
 

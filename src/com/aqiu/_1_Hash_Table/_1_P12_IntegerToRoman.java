@@ -1,4 +1,4 @@
-package com.aqiu;
+package com.aqiu._1_Hash_Table;
 
 //Symbol       Value
 //I             1
@@ -12,9 +12,9 @@ package com.aqiu;
 /**
  * @author Aqiu
  */
-public class P12_IntegerToRoman {
+public class _1_P12_IntegerToRoman {
     public static void main(String[] args) {
-        Solution solution = new P12_IntegerToRoman().new Solution();
+        Solution solution = new _1_P12_IntegerToRoman().new Solution();
     }
 
     class Solution {
