@@ -43,7 +43,7 @@ public class _30_P1164_ProductPriceAtAGivenDate {
             from Products
             where product_id not in
             (
-                select product_id
+                select distinct product_id
                 from Products
                 where change_date <= date'2019-08-16'
             )
