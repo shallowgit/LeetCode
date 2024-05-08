@@ -2,11 +2,6 @@ package com.aqiu._2_Stack;
 
 import java.util.*;
 
-/**
- * Binary Tree Preorder Traversal
- *
- * @author Aqiu
- */
 public class _6_P20_ValidParentheses {
     public static void main(String[] args) {
         Solution solution = new _6_P20_ValidParentheses().new Solution();
