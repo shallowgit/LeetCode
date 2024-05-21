@@ -1,9 +1,6 @@
 package com.aqiu._1_Hash_Table;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Aqiu
@@ -20,11 +17,9 @@ public class _5_P49_GroupAnagrams {
             for (String str : strs) {
                 char[] ch = str.toCharArray();
                 Arrays.sort(ch);
-                String key = String.valueOf(ch);
-                if(!hashMap.containsKey(key)) {
-                    hashMap.put(key,new ArrayList<>());
-                }
-                hashMap.get(key).add(str);
+                ArrayList<String> list = hashMap.getOrDefault(String.valueOf(ch), new ArrayList<>());
+                list.add(str);
+                hashMap.put(String.valueOf(ch), list);
             }
             return new ArrayList<>(hashMap.values());
         }
