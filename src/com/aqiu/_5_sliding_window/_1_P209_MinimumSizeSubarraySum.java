@@ -1,8 +1,8 @@
-package com.aqiu._4_dual_pointer;
+package com.aqiu._5_sliding_window;
 
-public class _3_P209_MinimumSizeSubarraySum {
+public class _1_P209_MinimumSizeSubarraySum {
     public static void main(String[] args) {
-        Solution solution = new _3_P209_MinimumSizeSubarraySum().new Solution();
+        Solution solution = new _1_P209_MinimumSizeSubarraySum().new Solution();
         int[] ints = new int[]{2, 3, 1, 2, 4, 3};
         solution.minSubArrayLen(7, ints);
     }
