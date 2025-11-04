@@ -106,45 +106,38 @@ public class _2_P13_RomanToInteger {
     }
 
     class Solution3 {
-        private int result = 0;
-
         public int romanToInt(String s) {
-            int length = s.length();
-            int[] num = new int[length];
-            for (int i = 0; i < length; i++) {
-                switch (s.charAt(i)) {
-                    case 'I':
-                        num[i] = 1;
-                        break;
-                    case 'V':
-                        num[i] = 5;
-                        break;
-                    case 'X':
-                        num[i] = 10;
-                        break;
-                    case 'L':
-                        num[i] = 50;
-                        break;
-                    case 'C':
-                        num[i] = 100;
-                        break;
-                    case 'D':
-                        num[i] = 500;
-                        break;
-                    case 'M':
-                        num[i] = 1000;
-                        break;
-                    default:
-                        break;
+            int result = 0;
+            int pre = 0;
+            for (int i = 0; i < s.length(); i++) {
+                int cur = getValue(s.charAt(i));
+                if (pre < cur) {
+                    result -= 2 * pre;
                 }
-            }
-            for (int i = 0; i < length; i++) {
-                if (i < length - 1 && num[i - 1] < num[i]) {
-                    num[i] = -num[i];
-                }
-                result += num[i];
+                result += cur;
+                pre = cur;
             }
             return result;
+        }
+
+        public int getValue(char c) {
+            switch (c) {
+                case 'I':
+                    return 1;
+                case 'V':
+                    return 5;
+                case 'X':
+                    return 10;
+                case 'L':
+                    return 50;
+                case 'C':
+                    return 100;
+                case 'D':
+                    return 500;
+                case 'M':
+                    return 1000;
+            }
+            return 0;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
