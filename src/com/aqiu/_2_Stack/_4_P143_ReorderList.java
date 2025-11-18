@@ -27,9 +27,9 @@ class ListNode {
     }
 }
 
-public class P143_ReorderList {
+public class _4_P143_ReorderList {
     public static void main(String[] args) {
-        Solution solution = new P143_ReorderList().new Solution();
+        Solution solution = new _4_P143_ReorderList().new Solution();
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
         ListNode node3 = new ListNode(3);

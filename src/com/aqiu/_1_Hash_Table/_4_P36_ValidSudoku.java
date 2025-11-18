@@ -53,7 +53,7 @@ public class _4_P36_ValidSudoku {
 
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
-                    if (board[i][j] != '.'){
+                    if (board[i][j] != '.') {
                         int index = board[i][j] - '1';
                         int num = i / 3 + j / 3 * 3;
                         if (row[i][index] || column[j][index] || box[num][index]) {

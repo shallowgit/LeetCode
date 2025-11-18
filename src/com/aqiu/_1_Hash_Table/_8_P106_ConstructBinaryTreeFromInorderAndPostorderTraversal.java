@@ -75,32 +75,5 @@ public class _8_P106_ConstructBinaryTreeFromInorderAndPostorderTraversal {
             return treeNode;    // 回溯返回根节点
         }
     }
-
-    class Solution2 {
-        int[] postorder;
-        int root;
-        HashMap<Integer, Integer> hashMap = new HashMap<>();
-
-        public TreeNode buildTree(int[] inorder, int[] postorder) {
-            this.postorder = postorder;
-            root = postorder.length - 1;
-            for (int i = 0; i < inorder.length; i++) {
-                hashMap.put(inorder[i], i);
-            }
-            return buildMyTree(0, inorder.length - 1);
-        }
-
-        public TreeNode buildMyTree(int left, int right) {
-            if (left > right) {
-                return null;
-            }
-            int index = hashMap.get(postorder[root]);
-            TreeNode treeNode = new TreeNode(postorder[root]);
-            root--;
-            treeNode.right = buildMyTree(index + 1, right);
-            treeNode.left = buildMyTree(left, index - 1);
-            return treeNode;
-        }
-    }
 //leetcode submit region end(Prohibit modification and deletion)
 }

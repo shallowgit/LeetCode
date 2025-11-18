@@ -27,9 +27,9 @@ class TreeNode {
     }
 }
 
-public class P114_FlattenBinaryTreeToLinkedList {
+public class _3_P114_FlattenBinaryTreeToLinkedList {
     public static void main(String[] args) {
-        Solution solution = new P114_FlattenBinaryTreeToLinkedList().new Solution();
+        Solution solution = new _3_P114_FlattenBinaryTreeToLinkedList().new Solution();
         TreeNode treeNode = new TreeNode(1);
         treeNode.left = new TreeNode(2, new TreeNode(3, null, null), new TreeNode(4, null, null));
         treeNode.right = new TreeNode(5, null, new TreeNode(6, null, null));

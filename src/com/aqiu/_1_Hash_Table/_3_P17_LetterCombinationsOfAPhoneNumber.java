@@ -12,6 +12,12 @@ public class _3_P17_LetterCombinationsOfAPhoneNumber {
         solution.letterCombinations("23");
     }
 
+    /**
+     * 回溯法三部曲
+     * 1. 确定递归函数的参数以及返回值
+     * 2. 确定回溯函数终止条件
+     * 3. 确定单层遍历逻辑
+     */
     class Solution {
         String[] mapping = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         List<String> result = new ArrayList<>();
