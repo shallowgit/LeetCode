@@ -47,7 +47,7 @@ public class _11_P138_CopyListWithRandomPointer {
                 cur.next = node;
                 cur = cur.next.next;
             }
-            // 处理random指针
+            // 第二步：处理复制节点的random指针
             cur = head;
             while (cur != null) {
                 if (cur.random == null) {
@@ -58,14 +58,21 @@ public class _11_P138_CopyListWithRandomPointer {
                 cur = cur.next.next;
             }
             // 还原原始链表，即分离原链表和克隆链表
-            cur = head;
-            Node preHead = cur.next;
-            while (cur.next != null) {
-                Node temp = cur.next;
-                cur.next = cur.next.next;
-                cur = temp;
+            Node newHead = head.next; // 复制链表的头节点
+            Node pre = head; // 专门遍历原节点
+            while (pre != null) {
+                Node copyNode = pre.next; // 当前原节点对应的复制节点
+                Node nextOrigin = copyNode.next; // 下一个原节点（暂存）
+
+                // 1. 恢复原链表：当前原节点指向后一个原节点
+                pre.next = nextOrigin;
+                // 2. 构建复制链表：当前复制节点指向后一个复制节点（若存在）
+                copyNode.next = (nextOrigin != null) ? nextOrigin.next : null;
+
+                // 3. 推进遍历：原节点向后移动
+                pre = nextOrigin;
             }
-            return preHead;
+            return newHead;
         }
 
         /**
