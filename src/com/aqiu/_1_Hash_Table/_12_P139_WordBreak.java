@@ -18,6 +18,7 @@ public class _12_P139_WordBreak {
         /**
          * 题解链接：https://leetcode.cn/problems/word-break/solution/dan-ci-chai-fen-by-leetcode-solution/
          */
+        //以“空串可拆分”为起点，用动态规划数组记录字符串前i个字符的拆分合法性，通过两层循环枚举拆分点，借助哈希集合快速验证子串是否在字典中，用子问题的合法结果推导整个字符串能否拆分。
         public boolean wordBreak(String s, List<String> wordDict) {
             HashSet<String> hashSet = new HashSet<>(wordDict);
             boolean[] flag = new boolean[s.length() + 1];
@@ -45,6 +46,10 @@ public class _12_P139_WordBreak {
          * 我们的 check 重点是在 s[j...i-1]，即从 i 往前倒数，如果倒数的个数超过了 maxLen，那么就没有意义了，check 肯定为 false；
          * 所以这里检查长度是否超过 maxLen 时，必须用倒数遍历方式；
          */
+        /**
+         * 剪枝的核心逻辑是：子串s[j..i)的长度i-j如果超过字典最长单词长度maxLen，这个子串肯定不在字典里，无需检查。因此我们只需检查满足i-j <= maxLen的j（即j >= i - maxLen）
+         * 从前往后的写法会导致循环提前终止，漏掉合法的拆分点j，最终错误判断flag[i]；而从后往前遍历能精准覆盖所有需要检查的j，不会漏检
+         */
         public boolean wordBreak2(String s, List<String> wordDict) {
             boolean[] flag = new boolean[s.length() + 1];
             flag[0] = true;
@@ -56,7 +61,7 @@ public class _12_P139_WordBreak {
             }
             for (int i = 1; i <= s.length(); i++) {
                 for (int j = i; j >= i - maxLength; j--) {
-                    if (flag[j] && wordDict.contains(s.substring(j, i))) {
+                    if (flag[j] && hashSet.contains(s.substring(j, i))) {
                         flag[i] = true;
                     }
                 }
