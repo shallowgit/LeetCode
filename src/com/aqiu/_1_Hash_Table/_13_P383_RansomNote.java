@@ -45,19 +45,23 @@ public class _13_P383_RansomNote {
             if (ransomNote.length() > magazine.length()) {
                 return false;
             }
-            char[] resourceChars = magazine.toCharArray();
             int[] count = new int[26];
-            for (char c : resourceChars) {
+            for (char c : magazine.toCharArray()) {
                 count[c - 'a']++;
             }
-            char[] goalChars = ransomNote.toCharArray();
-            for (char c : goalChars) {
-                count[c - 'a']--;
-                if (count[c - 'a'] < 0) {
+            for (char c : ransomNote.toCharArray()) {
+                if (--count[c - 'a'] < 0) {
                     return false;
                 }
             }
             return true;
         }
     }
+
+    /**
+     * 总结
+     * 时间效率：理论复杂度均为 O(m + n)，但数组版本无哈希计算 / 冲突 / 装箱等额外开销，实际运行速度更快；
+     * 空间效率：理论复杂度均为常数级 O(1)，但数组版本占用固定且极小的内存（26 个 int），HashMap 有大量额外结构开销；
+     * 场景适配：本题是小写英文字母场景，数组版本是最优选择，HashMap 版本仅胜在通用性（但本题用不上）。
+     */
 }
